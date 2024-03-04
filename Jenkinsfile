@@ -30,7 +30,7 @@ pipeline {
                 script {
 
                     bat "docker build -t investinyweb:${BUILD_ID} ."
-                    bat "docker tag investinyweb:${BUILD_ID} kamelaloui/investinyweb:${BUILD_ID}"
+                    bat "docker tag investinyweb:${BUILD_ID} kamelaloui/DjeridExplor:${BUILD_ID}"
                 }
             }
         }
@@ -40,7 +40,7 @@ pipeline {
                         script {
                                 def newContainerName = "investinycontainer_${BUILD_ID}"
 
-                                 bat "docker run -d -p 7200:80 --name ${newContainerName} kamelaloui/investinyweb:${BUILD_ID}"
+                                 bat "docker run -d -p 7200:80 --name ${newContainerName} kamelaloui/DjeridExplor:${BUILD_ID}"
         }
     }
 }
